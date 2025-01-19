@@ -1,0 +1,66 @@
+body {
+    background: url('image_background.jpg') no-repeat center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #333; /* Couleur principale pour le texte */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #D10000; /* Couleur rouge du mot "ERPI" */
+    text-align: center;
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+form {
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Légèrement transparent */
+    width: 60%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 10px 0;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #D10000; /* Rouge du mot "ERPI" */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #a80000; /* Rouge plus foncé au survol */
+}
+
+p {
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* Mots Température, Description et Vitesse du vent en gras et souligné */
+p {
+    font-weight: bold;
+    color: white; /* Rouge du mot "ERPI" */
+}

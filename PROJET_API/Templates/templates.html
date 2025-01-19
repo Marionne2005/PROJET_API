@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>METEO & ACTIVITIES</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+    <h1>METEO & ACTIVITIES</h1>
+    <form action="{% url 'informations_metereologiques' %}" method="POST">
+      {% csrf_token %}
+       <label for="city">Ville:</label>
+       <input type="text" id="city" name="city"  placeholder="Veuillez entrer le nom de votre ville ici" required>
+       <button type="submit" name="ENVOYER">Envoyer</button>
+    </form>
+    {% if response_fin %}
+      <p>Température: {{ response_fin.0}}°C</p>
+      <p>Description: {{response_fin.1}}</p>
+      <p>Vitesse du vent: {{response_fin.2}} m/s</p>
+      {% if response_fin.0 < 0 %}
+          <p>La température à l'exterieur est assez élever; il serait préférable de faire des activités d'interieur comme des jeux de sociétés ou de la lecture.</p>
+      {% elif 0 <= response_fin.0 < 15 %}
+          <p>Il fait bien frais. Une petite promenade à l'exterieur serait l'idéal!! N'oublie pas toutefois de te couvrir!!</p>
+      {% elif 15 <= response_fin.0 < 25 %}
+          <p>La chaleur est au rendez-vous aujoud'hui !! Un petit pique-nique ou une sortie à la piscine serait parfait</p>
+      {% elif 25 <= response_fin.0 < 35 %}
+          <p>Le soleil est à son prime aujoud'hui!! N'oublie surtout pas de bien t'hydrater et de passer de la crème solaire avant de sortir!!</p>
+      {% endif %}
+    {% endif %}
+</body>
+</html>
